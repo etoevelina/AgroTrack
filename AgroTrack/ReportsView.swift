@@ -14,24 +14,24 @@ struct ReportsView: View {
 //    let sensorData: [SensorData] = vmCSV.loadSensorData(from: "2025-03-20")
 
     
-    let sampleReports: [Report] = [
-        Report(text: "Watering was increased due to high temperature.",
-               plantChanges: "Leaves look greener",
-               plantHeight: 6,
-               date: Date(),
-               hasImage: true),
-        
-        Report(text: "Lighting adjusted to 14 hours per day.",
-               plantChanges: "Plant seems to be growing faster",
-               plantHeight: 8,
-               date: Date().addingTimeInterval(-86400),
-               hasImage: false),
-        
-        Report(text: "Added fertilizer.",
-               plantChanges: "Growth accelerated.",
-               plantHeight: 12,
-               date: Date().addingTimeInterval(-172800),
-               hasImage: false)
+    let sampleReports: [Note] = [
+//        Note(text: "Watering was increased due to high temperature.",
+//               plantChanges: "Leaves look greener",
+//               plantHeight: 6,
+//               date: Date(),
+//               hasImage: true),
+//        
+//        Note(text: "Lighting adjusted to 14 hours per day.",
+//               plantChanges: "Plant seems to be growing faster",
+//               plantHeight: 8,
+//               date: Date().addingTimeInterval(-86400),
+//               hasImage: false),
+//        
+//        Note(text: "Added fertilizer.",
+//               plantChanges: "Growth accelerated.",
+//               plantHeight: 12,
+//               date: Date().addingTimeInterval(-172800),
+//               hasImage: false)
     ]
     
     var body: some View {
@@ -64,13 +64,13 @@ struct ReportsView: View {
         }
     }
     
-    private func reportCard(report: Report) -> some View {
+    private func reportCard(report: Note) -> some View {
         VStack(alignment: .leading, spacing: 15) {
             VStack(alignment: .leading) {
                 Text("Visual changes:")
                     .font(.system(size: 18, weight: .bold))
                     .foregroundStyle(Color.black)
-                Text(report.plantChanges)
+                Text(report.plant_changes)
                     .font(.system(size: 18, weight: .medium))
                     .foregroundStyle(Color.black)
             }
@@ -79,7 +79,7 @@ struct ReportsView: View {
                 Text("Plant height: ")
                     .font(.system(size: 18, weight: .bold))
                     .foregroundStyle(Color.black)
-                Text("\(report.plantHeight) cm")
+                Text("\(report.plant_height) cm")
                     .font(.system(size: 18, weight: .medium))
                     .foregroundStyle(Color.black)
             }
@@ -94,25 +94,25 @@ struct ReportsView: View {
             }
             
             HStack {
-                Text(report.date, format: .dateTime.day().month().year())
-                    .font(.system(size: 16, weight: .medium))
-                    .foregroundStyle(Color.gray)
+//                Text(report.date, format: .dateTime.day().month().year())
+//                    .font(.system(size: 16, weight: .medium))
+//                    .foregroundStyle(Color.gray)
                 Spacer()
                 
-                if report.hasImage {
-                    Button {
-                        
-                    } label: {
-                        Text("Show image")
-                            .font(.system(size: 16, weight: .medium))
-                            .foregroundStyle(Color.black)
-                            .padding(.horizontal)
-                            .padding(.vertical, 5)
-                            .frame(width: 135, height: 37)
-                            .background(Color.green.opacity(0.6))
-                            .cornerRadius(24)
-                    }
-                }
+//                if report.hasImage {
+//                    Button {
+//                        
+//                    } label: {
+//                        Text("Show image")
+//                            .font(.system(size: 16, weight: .medium))
+//                            .foregroundStyle(Color.black)
+//                            .padding(.horizontal)
+//                            .padding(.vertical, 5)
+//                            .frame(width: 135, height: 37)
+//                            .background(Color.green.opacity(0.6))
+//                            .cornerRadius(24)
+//                    }
+//                }
             }
         }
         .padding()

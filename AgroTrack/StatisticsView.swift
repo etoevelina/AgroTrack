@@ -34,24 +34,24 @@ struct StatisticsView: View {
 
 
 struct GrowthChartView: View {
-    let sampleReports: [Report] = [
-        Report(text: "Watering was increased due to high temperature.",
-               plantChanges: "Leaves look greener",
-               plantHeight: 6,
-               date: Date(),
-               hasImage: true),
-        
-        Report(text: "Lighting adjusted to 14 hours per day.",
-               plantChanges: "Plant seems to be growing faster",
-               plantHeight: 8,
-               date: Date().addingTimeInterval(-86400),
-               hasImage: false),
-        
-        Report(text: "Added fertilizer.",
-               plantChanges: "Growth accelerated.",
-               plantHeight: 12,
-               date: Date().addingTimeInterval(-172800),
-               hasImage: false)
+    let sampleReports: [Note] = [
+//        Note(text: "Watering was increased due to high temperature.",
+//               plantChanges: "Leaves look greener",
+//               plantHeight: 6,
+//               date: Date(),
+//               hasImage: true),
+//        
+//        Note(text: "Lighting adjusted to 14 hours per day.",
+//               plantChanges: "Plant seems to be growing faster",
+//               plantHeight: 8,
+//               date: Date().addingTimeInterval(-86400),
+//               hasImage: false),
+//        
+//        Note(text: "Added fertilizer.",
+//               plantChanges: "Growth accelerated.",
+//               plantHeight: 12,
+//               date: Date().addingTimeInterval(-172800),
+//               hasImage: false)
     ]
 
     var body: some View {
@@ -60,14 +60,14 @@ struct GrowthChartView: View {
                 .font(.title2.bold())
                 .padding(.top)
             
-            Chart(sampleReports.sorted(by: { $0.date < $1.date })) { report in
-                LineMark(
-                    x: .value("Date", report.date),
-                    y: .value("Height", report.plantHeight)
-                )
-                .foregroundStyle(Color.green)
-                .symbol(Circle())
-            }
+//            Chart(sampleReports.sorted(by: { $0.date < $1.date })) { report in
+//                LineMark(
+//                    x: .value("Date", report.date),
+//                    y: .value("Height", report.plantHeight)
+//                )
+//                .foregroundStyle(Color.green)
+//                .symbol(Circle())
+//            }
             .chartXAxis {
                 AxisMarks { value in
                     AxisValueLabel(format: .dateTime.day().month(), centered: true)

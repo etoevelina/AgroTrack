@@ -13,7 +13,8 @@ import SwiftUI
 final class ApiClientSoils: ObservableObject {
     static let shared = ApiClientSoils()
     @Published var soils: [Soils]?
-    func fetchPlantes() async throws {
+    
+    func fetchPlants() async throws {
         let fetchRequest = URLRequest(url: Link.soils.url)
         
         let (data, response) = try await URLSession.shared.data(for: fetchRequest)

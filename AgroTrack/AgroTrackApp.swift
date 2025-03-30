@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct AgroTrackApp: App {
+    let defaults = UserDefaults.standard.bool(forKey: "login")
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if defaults {
+                ContentView()
+            } else {
+                AuthorizationView()
+            }
         }
     }
 }
