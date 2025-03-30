@@ -9,6 +9,8 @@ import SwiftUI
 
 struct GardenBedDetailView: View {
     var cardImageName: String
+    @Binding var isAddNewNotePresented: Bool
+
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
         let (courseCardName, bgColor) = getCourseProperties()
@@ -71,7 +73,7 @@ struct GardenBedDetailView: View {
                 }))
             .padding(.bottom)
             
-            CustomPickerView(backgroundColor: bgColor)
+            CustomPickerView(isAddNewNotePresented: $isAddNewNotePresented, backgroundColor: bgColor)
                 
         }
         .background(LinearGradient(
@@ -100,6 +102,6 @@ struct GardenBedDetailView: View {
     }
 }
 
-#Preview {
-    GardenBedDetailView(cardImageName: "detail1")
-}
+//#Preview {
+//    GardenBedDetailView(cardImageName: "detail1")
+//}

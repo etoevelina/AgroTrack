@@ -81,6 +81,7 @@ struct GardenBed {
 }
 
 struct GardenBedView: View {
+    @Binding var isAddNewNotePresented: Bool
     let cardImageNames = ["home1", "home2", "home3"]
     let gardenBeds: [GardenBed] = [
         GardenBed(gardenBedName: "Грядка 1", microGrassName: "Руккола", dateOfSowing: Date()),
@@ -94,7 +95,7 @@ struct GardenBedView: View {
                 ForEach(gardenBeds.enumerated().map { $0 }, id: \.element.gardenBedName) { index, bed in
 
                     let cardImageName = cardImageNames[index % cardImageNames.count]
-                    NavigationLink(destination: GardenBedDetailView(cardImageName: cardImageName)){
+                    NavigationLink(destination: GardenBedDetailView(cardImageName: cardImageName, isAddNewNotePresented: $isAddNewNotePresented)){
                         GardenBedCardView(cardImageName: cardImageName)
                             .scrollTransition(.interactive, axis: .vertical) { view, phase in
                                 view.opacity(phase.value < 0 ? 0 : 1)

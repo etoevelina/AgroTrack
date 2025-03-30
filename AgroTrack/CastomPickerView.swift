@@ -10,6 +10,7 @@ import SwiftUI
 enum CategoryCourse: String, CaseIterable {
     case data = "Data"
     case reports = "Reports"
+    case statistics = "Statistics"
     case recomendations = "Recomendations"
     
     var title: String {
@@ -18,6 +19,7 @@ enum CategoryCourse: String, CaseIterable {
 }
 
 struct CustomPickerView: View {
+    @Binding var isAddNewNotePresented: Bool
     var backgroundColor: Color
     @State private var selectedCategory: CategoryCourse = .data
     
@@ -47,12 +49,14 @@ struct CustomPickerView: View {
                 }
             }
             
-            SelectedCategoryView(selectedCategory: selectedCategory)
+            SelectedCategoryView(isAddNewNotePresented: $isAddNewNotePresented, selectedCategory: selectedCategory)
         }
     }
 }
 
 struct SelectedCategoryView: View {
+    @Binding var isAddNewNotePresented: Bool
+
     let selectedCategory: CategoryCourse
     
     var body: some View {
@@ -61,7 +65,9 @@ struct SelectedCategoryView: View {
             case .data:
                 BedDataView()
             case .reports:
-                ReportsView()
+                ReportsView(isAddNewNotePresented: $isAddNewNotePresented)
+            case .statistics:
+                StatisticsView()
             case .recomendations:
                 RecomendationView()
             }

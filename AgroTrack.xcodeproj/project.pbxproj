@@ -10,10 +10,28 @@
 		0A1642842D98213D005917A7 /* AgroTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AgroTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		0AE94E462D98A28600DEF3CC /* Exceptions for "AgroTrack" folder in "AgroTrack" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 0A1642832D98213D005917A7 /* AgroTrack */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		0A1642862D98213D005917A7 /* AgroTrack */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				0AE94E462D98A28600DEF3CC /* Exceptions for "AgroTrack" folder in "AgroTrack" target */,
+			);
 			path = AgroTrack;
+			sourceTree = "<group>";
+		};
+		0AE94E4F2D98B56500DEF3CC /* Managers */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -32,6 +50,7 @@
 		0A16427B2D98213D005917A7 = {
 			isa = PBXGroup;
 			children = (
+				0AE94E4F2D98B56500DEF3CC /* Managers */,
 				0A1642862D98213D005917A7 /* AgroTrack */,
 				0A1642852D98213D005917A7 /* Products */,
 			);
@@ -62,6 +81,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				0A1642862D98213D005917A7 /* AgroTrack */,
+				0AE94E4F2D98B56500DEF3CC /* Managers */,
 			);
 			name = AgroTrack;
 			packageProductDependencies = (
@@ -252,6 +272,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AgroTrack/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -291,6 +313,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AgroTrack/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

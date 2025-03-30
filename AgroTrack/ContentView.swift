@@ -1,8 +1,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var isAddNewBedPresented = false // Управляет показом sheet
-    
+    @State private var isAddNewBedPresented = false
+    @State private var isAddNewNotePresented = false
     var body: some View {
         NavigationView {
             ZStack {
@@ -71,7 +71,7 @@ struct ContentView: View {
                                 .cornerRadius(18)
                         }
                     }
-                    GardenBedView()
+                    GardenBedView(isAddNewNotePresented: $isAddNewNotePresented)
                 }
                 .padding(.horizontal)
                 
@@ -79,6 +79,11 @@ struct ContentView: View {
         }
         .sheet(isPresented: $isAddNewBedPresented) {
             AddNewBedView()
+                .presentationDragIndicator(.visible)
+        }
+        .sheet(isPresented: $isAddNewNotePresented) {  
+            AddNewNoteView()
+                .presentationDragIndicator(.visible)
         }
     }
 }

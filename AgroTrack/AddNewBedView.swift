@@ -16,8 +16,9 @@ struct AddNewBedView: View {
     }
 
     var body: some View {
-        
             Form {
+                Section(header: Text("")) {
+                }
                 Section(header: Text("Garden Bed Details")) {
                     TextField("Enter bed name", text: $bedName)
                 }
